@@ -1,7 +1,7 @@
 ﻿namespace WebApplication1.Library.DB
 {
-    public interface IDBRequest
+    public interface IDBRequest<T>
     {
-        string Send(string text);
+        Task<T> Send(string text);
     }
 }
