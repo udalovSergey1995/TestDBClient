@@ -2,6 +2,6 @@
 {
     public interface IDBRequest<T>
     {
-        Task<T> Send(string text);
+        Task<T> Get(string text);
     }
 }

@@ -11,7 +11,7 @@ namespace WebApplication1.Library.DB
         {
             Table = tableName;
         }
-        public async Task<T> Send(string Id)
+        public async Task<T> Get(string Id)
         {
             T result;
             using (var db = new MySqlConnection(SQLConfig.Connection))

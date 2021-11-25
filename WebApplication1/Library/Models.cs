@@ -45,8 +45,8 @@ namespace WebApplication1.Library
         private PassportModel _passport = null;
         private DepartmentModel _department = null;
 
-        private async void GetPassportModel() => _passport = await((new GetObjectById<PassportModel>("passport")).Send(PassportId.ToString()));
-        private async void GetDepartmentModel() => _department = await ((new GetObjectById<DepartmentModel>("department")).Send(DepartmentId.ToString()));
+        private async void GetPassportModel() => _passport = await((new GetObjectById<PassportModel>("passport")).Get(PassportId.ToString()));
+        private async void GetDepartmentModel() => _department = await ((new GetObjectById<DepartmentModel>("department")).Get(DepartmentId.ToString()));
     }
     public class PassportModel
     {
