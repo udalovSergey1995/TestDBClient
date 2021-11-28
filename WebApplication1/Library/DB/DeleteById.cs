@@ -14,7 +14,14 @@ namespace WebApplication1.Library.DB
         {
             using (var db = new MySqlConnection(SQLConfig.Connection))
             {
-                var resp = await db.QueryAsync("DELETE FROM "+ TableName + " WHERE " + TableName + ".ID = "+id);
+                try
+                {
+                    var resp = await db.QueryAsync("DELETE FROM " + TableName + " WHERE " + TableName + ".ID = " + id);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
             return true;
         }
